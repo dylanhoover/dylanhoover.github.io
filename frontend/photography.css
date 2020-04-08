@@ -42,81 +42,199 @@ body {
 	width: 100%;
 }
 
-.pos1{
+#myImg1 {
+  cursor: pointer;
+  transition: 0.3s;
   position: fixed;
+  float: left;
   left: 80px;
-  float: left;
   padding: 10px;
-  transition: transform .2s;
-  }
-
-.pos1:hover{
-  transform: matrix(3.5,0,0,3.5,600,300);
-  z-index: 999;
 }
-.pos2{
+
+#myImg1:hover {opacity: 0.7;}
+
+
+#myImg2 {
+  cursor: pointer;
+  transition: 0.3s;
   position: fixed;
-  left: 420px;
   float: left;
+  left: 420px;
   padding: 10px;
-  transition: transform .2s;
 }
 
-.pos2:hover{
-  transform: matrix(3.5,0,0,3.5,400,300);
-  z-index: 999;
-}
+#myImg2:hover {opacity: 0.7;}
 
-.pos3{
+
+#myImg3{
   position: fixed;
   float: left;
   left: 760px;
   padding: 10px;
-  transition: transform .2s;
+  transition: transform .3s;
+  cursor: pointer;
 
 }
 
-.pos3:hover{
-  transform: matrix(3.5,0,0,3.5,0,300);
-  z-index: 999;
-}
+#myImg3:hover{opacity: 0.7;}
 
-.pos4{
+#myImg4{
   position: fixed;
   float: left;
   left: 1100px;
   padding: 10px;
-  transition: transform .2s;
+  transition: transform .3s;
+  cursor: pointer;
 }
 
-.pos4:hover{
-  transform: matrix(3.5,0,0,3.5,-340,300);
-  z-index: 999;
-}
+#myimg4:hover{opacity: 0.7;}
 
-.pos5{
+#myImg5{
   position: fixed;
   float: left;
   left: 1443px;
   padding: 10px;
-  transition: transform .2s;
+  transition: transform .3s;
+  cursor: pointer;
 }
 
-.pos5:hover{
-  transform: matrix(3.5,0,0,3.5,-650,300);
-  z-index: 999;
-}
+#myImg5:hover{opacity: 0.7;}
 
-.pos6{
+#myImg6{
   position: fixed;
   float: left;
   top: 443px;
   left: 80px;
   padding: 10px;
-  transition: transform .2s;
+  transition: transform .3s;
+  cursor: pointer;
 }
 
-.pos6:hover{
-  transform: matrix(3.5,0,0,3.5,650,0);
-  z-index: 999;
+#myImg6:hover{opacity: 0.7;}
+
+#myImg7{
+  position: fixed;
+  float: left;
+  top: 443px;
+  left: 420px;
+  padding: 10px;
+  transition: transform .3s;
+  cursor: pointer;
+}
+
+#myImg7:hover{opacity: 0.7;}
+
+#myImg8{
+  position: fixed;
+  float: left;
+  top: 443px;
+  left: 760px;
+  padding: 10px;
+  transition: transform .3s;
+  cursor: pointer;
+}
+
+#myImg8:hover{opacity: 0.7;}
+
+#myImg9{
+  position: fixed;
+  float: left;
+  top: 443px;
+  left: 1100px;
+  padding: 10px;
+  transition: transform .3s;
+  cursor: pointer;
+}
+
+#myImg9:hover{opacity: 0.7;}
+
+#myImg10{
+  position: fixed;
+  float: left;
+  top: 443px;
+  left: 1443px;
+  padding: 10px;
+  transition: transform .3s;
+  cursor: pointer;
+}
+
+#myImg10:hover{opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  transform: scale(1.01);
+  max-height: 1000px;
+  
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
 }
