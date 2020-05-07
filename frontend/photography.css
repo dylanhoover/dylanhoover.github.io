@@ -1,21 +1,42 @@
-ul {
-    list-style-type: none;
+header{
+  background-color:#333;
+  height: 80px;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  z-index: 99;
+}
+header *{
+  display: inline;
+}
+
+h1 {
+    font-size: 32px;
+    font-family: sans-serif;
+    color:rgb(255, 255, 255);
+    padding: 24px;
     margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
+    float: left;
+    left: 80px;
+}
+
+header ul {
+    font-family: sans-serif;
+    
   }
   
-  li {
-    float: left;
+  header li { 
+    padding: 20px;
   }
   
   li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
+    display: inline-block;
+    color:white;
     text-decoration: none;
+    padding: 20px 16px;
   }
   
   li a:hover:not(.active) {
@@ -23,32 +44,28 @@ ul {
   }
 
   .active {
-    background-color: #4CAF50;
+    color: rgb(0, 173, 241);
   }
 
-  h1 {
-    font-size: 32px;
-    font-family: sans-serif;
-    color:rgb(255, 255, 255);
-    background-color:#333;
-    padding: 20px;
-    margin: 0;
-}
 
-body {
-	height: 100%;
-	margin: 0;
-	text-align: center;
-	width: 100%;
-}
+  body {
+    height: 125vh;
+    margin-top: 80px;
+    text-align: center;
+    padding: 30px;
+    background-color: rgb(36, 35, 35);
+  }
+
+
 
 #myImg1 {
   cursor: pointer;
   transition: 0.3s;
-  position: fixed;
+  position: absolute;
   float: left;
   left: 80px;
-  padding: 10px;
+  padding: 1px;
+  border: 3px solid rgb(83, 83, 83);
 }
 
 #myImg1:hover {opacity: 0.7;}
@@ -57,32 +74,34 @@ body {
 #myImg2 {
   cursor: pointer;
   transition: 0.3s;
-  position: fixed;
+  position: absolute;
   float: left;
   left: 420px;
-  padding: 10px;
+  padding: 1px;
+  border: 3px solid rgb(83, 83, 83);
 }
 
 #myImg2:hover {opacity: 0.7;}
 
 
 #myImg3{
-  position: fixed;
+  position: absolute;
   float: left;
   left: 760px;
-  padding: 10px;
   transition: transform .3s;
   cursor: pointer;
-
+  padding: 1px;
+  border: 3px solid rgb(83, 83, 83);
 }
 
 #myImg3:hover{opacity: 0.7;}
 
 #myImg4{
-  position: fixed;
+  position: absolute;
   float: left;
   left: 1100px;
-  padding: 10px;
+  padding: 1px;
+  border: 3px solid rgb(83, 83, 83);
   transition: transform .3s;
   cursor: pointer;
 }
@@ -90,10 +109,11 @@ body {
 #myimg4:hover{opacity: 0.7;}
 
 #myImg5{
-  position: fixed;
+  position: absolute;
   float: left;
   left: 1443px;
-  padding: 10px;
+  padding: 1px;
+  border: 3px solid rgb(83, 83, 83);
   transition: transform .3s;
   cursor: pointer;
 }
@@ -101,11 +121,12 @@ body {
 #myImg5:hover{opacity: 0.7;}
 
 #myImg6{
-  position: fixed;
+  position: absolute;
   float: left;
   top: 443px;
   left: 80px;
-  padding: 10px;
+  padding: 1px;
+  border: 3px solid rgb(83, 83, 83);
   transition: transform .3s;
   cursor: pointer;
 }
@@ -113,11 +134,12 @@ body {
 #myImg6:hover{opacity: 0.7;}
 
 #myImg7{
-  position: fixed;
+  position: absolute;
   float: left;
   top: 443px;
   left: 420px;
-  padding: 10px;
+  padding: 1px;
+  border: 3px solid rgb(83, 83, 83);
   transition: transform .3s;
   cursor: pointer;
 }
@@ -125,11 +147,12 @@ body {
 #myImg7:hover{opacity: 0.7;}
 
 #myImg8{
-  position: fixed;
+  position: absolute;
   float: left;
   top: 443px;
   left: 760px;
-  padding: 10px;
+  padding: 1px;
+  border: 3px solid rgb(83, 83, 83);
   transition: transform .3s;
   cursor: pointer;
 }
@@ -137,11 +160,12 @@ body {
 #myImg8:hover{opacity: 0.7;}
 
 #myImg9{
-  position: fixed;
+  position: absolute;
   float: left;
   top: 443px;
   left: 1100px;
-  padding: 10px;
+  padding: 1px;
+  border: 3px solid rgb(83, 83, 83);
   transition: transform .3s;
   cursor: pointer;
 }
@@ -149,11 +173,12 @@ body {
 #myImg9:hover{opacity: 0.7;}
 
 #myImg10{
-  position: fixed;
+  position: absolute;
   float: left;
   top: 443px;
   left: 1443px;
-  padding: 10px;
+  padding: 1px;
+  border: 3px solid rgb(83, 83, 83);
   transition: transform .3s;
   cursor: pointer;
 }
@@ -237,4 +262,8 @@ body {
   .modal-content {
     width: 100%;
   }
+}
+
+.pictures{
+  border: 1px solid gray;
 }
