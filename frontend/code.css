@@ -90,14 +90,35 @@ header ul {
   padding-top: 50px;
   padding-bottom: 50px;
   width:250px;
+  height: 250px;
   align-items: center;
   flex-grow: 0; 
+  position: relative;
+}
+
+
+
+.overlay{
+  position: absolute;
+  top: 50;
+  left: 50;
+  width:251px;
+  height: 255px;
+  transition: ease .75s;
+  opacity: 0;
+}
+
+#block:hover .overlay{
   
+  background-color:hsla(113, 94%, 50%, 0.28);
+  opacity: 1;
 }
 
-#block:active{
-    opacity: .5;
-}
-
-
+.text{
+  position: absolute;
+  top: 43%;
+  left: 38%;
+  color: white;
+  background-color: black;
+  padding: 16px 14px;
 }
