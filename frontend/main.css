@@ -73,8 +73,19 @@ header ul {
 
 #bio{
   display: flex;
-  flex: 50%;
-  background-color: beige;
+  flex: 25%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(48, 48, 47);
+}
+
+#footer{
+  display: flex;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 0;
 }
 
 .inner_div{
@@ -93,5 +104,10 @@ header ul {
 
 #info{
   font-size: 20px;
+  color: white;
+}
+
+#info2{
+  font-size: 16px;
   color: white;
 }

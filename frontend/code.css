@@ -54,3 +54,50 @@ header ul {
     color: rgb(0, 173, 241);
   }
 
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  
+}
+
+.row2{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+
+#image{
+ border:2px solid #333;
+ box-shadow: 10px 8px 8px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+#name{
+  color: rgb(0, 173, 241);
+  font-family: sans-serif;
+  background-color: #333;
+  padding-left: 93px;
+  padding-right: 93px;
+  box-shadow: 10px 8px 8px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#block{
+  display: flex;
+  flex-direction: column;
+  flex: 33%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width:250px;
+  align-items: center;
+  flex-grow: 0; 
+  
+}
+
+#block:active{
+    opacity: .5;
+}
+
+
+}
