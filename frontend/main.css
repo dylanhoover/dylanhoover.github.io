@@ -2,8 +2,8 @@ body {
   margin-top: 90px;
   background-color: rgb(36, 35, 35);
 }
-header{
-  background-color:#333;
+header {
+  background-color: #333;
   height: 80px;
   top: 0;
   left: 0;
@@ -13,65 +13,64 @@ header{
   align-items: center;
   z-index: 99;
 }
-header *{
+header * {
   display: inline;
 }
 
 header h1 {
-    font-size: 32px;
-    font-family: sans-serif;
-    color:rgb(255, 255, 255);
-    padding: 24px;
-    margin: 0;
-    float: left;
-    left: 80px;
+  font-size: 32px;
+  font-family: sans-serif;
+  color: rgb(255, 255, 255);
+  padding: 24px;
+  margin: 0;
+  float: left;
+  left: 80px;
 }
 
 header ul {
-    position: relative;
-    font-family: sans-serif;
-    
-  }
-  
-  header li { 
-    padding: 20px;
-  }
-  
-  li a {
-    display: inline-block;
-    color:white;
-    text-decoration: none;
-    padding: 20px 16px;
-  }
-  
-  li a:hover:not(.active) {
-    background-color: #111;
-  }
+  position: relative;
+  font-family: sans-serif;
+}
 
-  .active {
-    color: rgb(0, 173, 241);
-  }
+header li {
+  padding: 20px;
+}
 
-  .WIP {
-      font-size: 40px;
-      color: red;
-  }
+li a {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  padding: 20px 16px;
+}
 
-  #wapper{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-  }
+li a:hover:not(.active) {
+  background-color: #111;
+}
 
-#main{
-    display:flex;
-    flex: 50%;
-    align-items: center;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
+.active {
+  color: rgb(0, 173, 241);
+}
 
-#bio{
+.WIP {
+  font-size: 40px;
+  color: red;
+}
+
+#wapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+#main {
+  display: flex;
+  flex: 50%;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+#bio {
   display: flex;
   flex: 25%;
   padding-top: 20px;
@@ -81,33 +80,32 @@ header ul {
   background-color: rgb(48, 48, 47);
 }
 
-#footer{
+#footer {
   display: flex;
   align-items: flex-end;
   position: absolute;
   bottom: 0;
 }
 
-.inner_div{
+.inner_div {
   padding: 10px;
 }
 
 #photo {
-    transform: scale(.8);
+  transform: scale(0.8);
 }
 
-
-#name{
-  color:white;
+#name {
+  color: white;
   font-size: 32px;
 }
 
-#info{
+#info {
   font-size: 20px;
   color: white;
 }
 
-#info2{
+#info2 {
   font-size: 16px;
   color: white;
 }
