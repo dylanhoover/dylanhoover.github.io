@@ -1,36 +1,65 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="/frontend/main.css"/>
+    <link rel="stylesheet" type="text/css" href="/frontend/main.css" />
 </head>
+
 <body>
-    <header>
-        <h1>Home</h1>
-            <nav>
-                <ul>
-                    <li><a class="active" href="index.html">Home</a></li>
-                    <li><a href="/frontend/codeMain.html">Code</a></li>
-                    <li><a href="/frontend/photography.html">Photography</a></li>
-                </ul>
-            </nav>
+    <header class="header">
+        <ul>
+            <li><a href="#name">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+        </ul>
     </header>
-    <div id="wapper">
-        <div id="main">
-            <div class = "inner_div">
-                <img id="photo" src="/media/circle-cropped.png" alt="me"> 
-            </div>
-            <div class="inner_div" id="name">Dylan Hoover</div>
-            <div class="inner_div" id="info">Computer Engineering Student</div>
-        </div>
-        <div id="bio">
-            <div class="inner_div" id="info2">Hello, my name is Dylan Hoover. I am a computer engineering student studying at Santa Clara University. </div>
-            <div class="inner_div" id="info2">This website is a portfolio of my SCU labs, personal coding projects, and some photography.</div>
-            <div class="inner_div" id="info2">My interests include artifical intelligence, machine learning, and fullstack app development</div>
-        </div>   
+    <div orientation="left" id="socials">
+
     </div>
-    <div id="footer">
-        <div id="copyright">&copy; Dylan Hoover, 2020</div>
-    </div> 
+    <div orientation="right" id="email" class="emailSide">
+        <div>
+            <a href="mailto:dylan.grant.hoover@gmail.com">dylan.grant.hoover@gmail.com</a>
+        </div>
+    </div>
+    <div id="content">
+        <main>
+            <section id="name" class="intro sections">
+                <div>Hello, I'm</div>
+                <div>Dylan Hoover</div>
+            </section>
+            <section id="about" class="aboutMe sections">
+                <h2>About Me</h2>
+                <div>
+                    <p>
+                        Hi, I'm Dylan. I'm a software engineer with a passion for creating and learning. I recieved both
+                        my Bachelors and Masters degrees in Computer Science and Engineering from Santa Clara
+                        University. I'm
+                        currently a software engineer at SafeInHome where I mainly focus on front-end development. I am
+                        always
+                        looking for new technologies to learn and new projects to work on.
+                    </p>
+                    <p>
+                        Some of the technologies I've worked with include:
+                    <ul class="techList">
+                        <li>JavaScript (ES6+)</li>
+                        <li>React</li>
+                        <li>Redux</li>
+                        <li>Node.js</li>
+                        <li>.NET</li>
+                        <li>Typscript</li>
+                    </ul>
+                    </p>
+                </div>
+            </section>
+            <section id="projects" class="projects sections">
+                <h2>Projects</h2>
+                <div>
+
+                </div>
+            </section>
+        </main>
+    </div>
 </body>
+
 </html>

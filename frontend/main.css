@@ -1,113 +1,134 @@
-body {
-  margin-top: 90px;
-  background-color: rgb(36, 35, 35);
+* {
+  /* outline: red solid 1px; */
+  background-color: rgb(0, 88, 104);
 }
-header{
-  background-color:#333;
-  height: 80px;
-  top: 0;
-  left: 0;
-  right: 0;
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  color: white;
+  font-family: "Roboto Mono", monospace;
+}
+
+.header ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.header li a{
+  padding: 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-family: "Roboto Mono", monospace;
+}
+
+.emailSide {
+  width: 40px;
   position: fixed;
+  bottom: 300px;
+  left: auto;
+  right: 50px;
+  z-index: 10;
+  color: white;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+
+}
+
+.emailSide a {
+  color: white;
+  text-decoration: none;
+  font-family: "Roboto Mono", monospace;
+  font-size: 1rem;
+}
+
+.emailSide a:hover {
+  color: rgb(0, 173, 241);
+}
+
+
+
+
+.sections {
   display: flex;
-  align-items: center;
-  z-index: 99;
-}
-header *{
-  display: inline;
-}
-
-header h1 {
-    font-size: 32px;
-    font-family: sans-serif;
-    color:rgb(255, 255, 255);
-    padding: 24px;
-    margin: 0;
-    float: left;
-    left: 80px;
-}
-
-header ul {
-    position: relative;
-    font-family: sans-serif;
-    
-  }
-  
-  header li { 
-    padding: 20px;
-  }
-  
-  li a {
-    display: inline-block;
-    color:white;
-    text-decoration: none;
-    padding: 20px 16px;
-  }
-  
-  li a:hover:not(.active) {
-    background-color: #111;
-  }
-
-  .active {
-    color: rgb(0, 173, 241);
-  }
-
-  .WIP {
-      font-size: 40px;
-      color: red;
-  }
-
-  #wapper{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-  }
-
-#main{
-    display:flex;
-    flex: 50%;
-    align-items: center;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-
-#bio{
-  display: flex;
-  flex: 25%;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  align-items: center;
   flex-direction: column;
-  background-color: rgb(48, 48, 47);
+  align-items: center;
+  justify-content: center;
+  height: 85vh;
 }
 
-#footer{
+.intro {
   display: flex;
-  align-items: flex-end;
-  position: absolute;
-  bottom: 0;
-}
-
-.inner_div{
-  padding: 10px;
-}
-
-#photo {
-    transform: scale(.8);
-}
-
-
-#name{
-  color:white;
-  font-size: 32px;
-}
-
-#info{
-  font-size: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(0, 88, 104);
   color: white;
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 20px;
 }
 
-#info2{
-  font-size: 16px;
+.aboutMe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 65vw;
+  padding: 20px;
+}
+
+.aboutMe h2 {
   color: white;
+  font-family: "Roboto Mono", monospace;
+  font-size: 2rem;
+}
+
+.aboutMe p {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.5rem;
+  text-align: center;
+  color: white;
+  padding: 0px 20px;
+}
+
+.aboutMe div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0px 0px;
+}
+
+.techList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 200px));
+  gap: 0px 10px;
+  padding: 0px;
+  margin: 20px 0px 0px;
+  overflow: hidden;
+  list-style: none;
+  text-align: center;
+  color: white;
+  font-family: "Roboto Mono", monospace;
+}
+
+.techList li ::before {
+  content: "▹";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(0, 173, 241);
+  border-radius: 50%;
+  margin-right: 10px;
 }
