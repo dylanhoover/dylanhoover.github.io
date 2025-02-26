@@ -7,8 +7,10 @@ const nextConfig = {
     images: {
         unoptimized: true,
     },
-    assetPrefix: isProduction ? "/dylanhoover.github.io/" : undefined,
-    basePath: isProduction ? "/dylanhoover.github.io" : undefined,
+    // assetPrefix: isProduction ? "/dylanhoover.github.io/" : undefined,
+    // basePath: isProduction ? "/dylanhoover.github.io" : undefined,
+    basePath: "/dylanhoover.github.io",
+    assetPrefix: "/dylanhoover.github.io/",
     output: "export",
 };
 
