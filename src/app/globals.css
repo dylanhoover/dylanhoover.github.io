@@ -1,3 +1,5 @@
+/* Remove Tailwind imports and any related styles */
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;

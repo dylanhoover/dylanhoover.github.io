@@ -1,0 +1,102 @@
+.projects-section {
+  padding: 40px 20px;
+}
+
+.projects-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.projects-intro {
+  text-align: center;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.project-item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.project-content.left {
+  flex-direction: row;
+}
+
+.project-content.right {
+  flex-direction: row-reverse;
+}
+
+.project-image {
+  flex: 1;
+  background-color: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+}
+
+.image-placeholder {
+  color: #007bff;
+  font-size: 1.2rem;
+}
+
+.project-details {
+  flex: 1;
+  padding: 20px;
+}
+
+.project-details h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.project-details p {
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.technologies {
+  margin-bottom: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.tech-badge {
+  background-color: #007bff;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 5px;
+  font-size: 0.8rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
