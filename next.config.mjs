@@ -9,8 +9,8 @@ const nextConfig = {
     },
     // assetPrefix: isProduction ? "/dylanhoover.github.io/" : undefined,
     // basePath: isProduction ? "/dylanhoover.github.io" : undefined,
-    basePath: "/dylanhoover.github.io",
-    assetPrefix: "/dylanhoover.github.io/",
+    basePath: "/dylanhoover.dev",
+    assetPrefix: "/dylanhoover.dev/",
     output: "export",
 };
 
