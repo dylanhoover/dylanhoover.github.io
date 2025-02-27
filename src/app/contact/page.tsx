@@ -1,10 +1,24 @@
+"use client";
+
 import ContactForm from "@/components/contact/ContactForm";
+import styled from "styled-components";
+
+const Section = styled.div`
+  padding: 40px 0;
+`;
+
+const Heading = styled.h1`
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--color-text);
+  margin-bottom: 3rem;
+`;
 
 export default function ContactPage() {
   return (
-    <div className="section">
-      <h1 className="heading-xl text-center mb-12">Contact Me</h1>
+    <Section>
+      <Heading>Contact Me</Heading>
       <ContactForm />
-    </div>
+    </Section>
   );
 }

@@ -1,57 +1,110 @@
+"use client";
+
 import Hero from "../components/home/Hero";
 import FeaturedProjects from "../components/home/FeaturedProjects";
 import SkillsOverview from "../components/home/SkillsOverview";
 import Link from "next/link";
+import styled from "styled-components";
+
+const HomeSection = styled.section`
+  padding: 2rem;
+  margin: 1rem 0;
+  background-color: var(--color-background);
+`;
+
+const LightBgSection = styled(HomeSection)`
+  background-color: var(--color-light-background);
+`;
+
+const TextCenter = styled.div`
+  text-align: center;
+`;
+
+const Heading = styled.h2`
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+`;
+
+const Description = styled.p`
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: 1.125rem;
+  color: var(--color-text);
+`;
+
+const ButtonContainer = styled.div`
+  margin-top: 2rem;
+  text-align: center;
+`;
+
+const Button = styled(Link)`
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 0.25rem;
+
+  &:hover {
+    background-color: var(--color-secondary);
+    text-decoration: none;
+  }
+`;
+
+const CTASection = styled.div`
+  background-color: var(--color-background);
+  padding: 2rem;
+  border-radius: 0.5rem;
+`;
 
 export default function HomePage() {
   return (
     <>
       <Hero />
 
-      <section className="section">
-        <div className="text-center mb-12">
-          <h2 className="heading-lg mb-4">Featured Projects</h2>
-          <p className="max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-400">
+      <HomeSection>
+        <TextCenter>
+          <Heading>Featured Projects</Heading>
+          <Description>
             Here are some of my recent projects that showcase my technical
             abilities and problem-solving skills.
-          </p>
-        </div>
+          </Description>
+        </TextCenter>
         <FeaturedProjects />
-        <div className="mt-10 text-center">
-          <Link href="/projects" className="button">
-            View All Projects
-          </Link>
-        </div>
-      </section>
+        <ButtonContainer>
+          <Button href="/projects">View All Projects</Button>
+        </ButtonContainer>
+      </HomeSection>
 
-      <section className="section bg-gray-50 dark:bg-gray-800/50">
-        <div className="text-center mb-12">
-          <h2 className="heading-lg mb-4">My Expertise</h2>
-          <p className="max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-400">
+      <LightBgSection>
+        <TextCenter>
+          <Heading>My Expertise</Heading>
+          <Description>
             I specialize in creating scalable and maintainable applications with
             modern technologies.
-          </p>
-        </div>
+          </Description>
+        </TextCenter>
         <SkillsOverview />
-        <div className="mt-10 text-center">
-          <Link href="/skills" className="button">
-            Explore My Skills
-          </Link>
-        </div>
-      </section>
+        <ButtonContainer>
+          <Button href="/skills">Explore My Skills</Button>
+        </ButtonContainer>
+      </LightBgSection>
 
-      <section className="section">
-        <div className="cta">
-          <h2 className="heading-lg mb-4">Let&apos;s Work Together</h2>
-          <p className="max-w-2xl mx-auto text-lg mb-8">
-            I&apos;m currently available for freelance work and open to new
-            opportunities.
-          </p>
-          <Link href="/contact" className="button">
-            Get in Touch
-          </Link>
-        </div>
-      </section>
+      <HomeSection>
+        <CTASection>
+          <TextCenter>
+            <Heading>Let&apos;s Work Together</Heading>
+            <Description>
+              I&apos;m currently available for freelance work and open to new
+              opportunities.
+            </Description>
+          </TextCenter>
+          <ButtonContainer>
+            <Button href="/contact">Get in Touch</Button>
+          </ButtonContainer>
+        </CTASection>
+      </HomeSection>
     </>
   );
 }

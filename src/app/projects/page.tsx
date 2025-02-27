@@ -1,4 +1,30 @@
+"use client";
 import Link from "next/link";
+import styled from "styled-components";
+import ProjectCard from "../../components/projects/ProjectCard";
+
+const ProjectsSection = styled.div`
+  padding: 20px;
+`;
+
+const ProjectsHeading = styled.h1`
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--color-text);
+`;
+
+const ProjectsIntro = styled.p`
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: var(--color-text);
+`;
+
+const ProjectsList = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between project cards */
+  color: var(--color-text);
+`;
 
 export default function ProjectsPage() {
   const projects = [
@@ -69,55 +95,20 @@ export default function ProjectsPage() {
   ];
 
   return (
-    <div className="projects-section">
-      <h1 className="projects-heading">Projects</h1>
+    <ProjectsSection>
+      <ProjectsHeading>Projects</ProjectsHeading>
 
-      <p className="projects-intro">
+      <ProjectsIntro>
         Here&apos;s a collection of my most significant projects, showcasing my
         skills in software development, algorithm optimization, and system
         design.
-      </p>
+      </ProjectsIntro>
 
-      <div className="projects-list">
-        {projects.map((project, index) => (
-          <section key={project.id} id={project.id} className="project-item">
-            <div
-              className={`project-content ${
-                index % 2 === 0 ? "left" : "right"
-              }`}
-            >
-              <div className="project-image">
-                <div className="image-placeholder">{project.title} Image</div>
-              </div>
-
-              <div className="project-details">
-                <h2>{project.title}</h2>
-
-                <p>{project.description}</p>
-
-                <p>{project.details}</p>
-
-                <div className="technologies">
-                  {project.technologies.map((tech) => (
-                    <span key={tech} className="tech-badge">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                <a
-                  href={project.githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="button"
-                >
-                  View on GitHub
-                </a>
-              </div>
-            </div>
-          </section>
+      <ProjectsList>
+        {projects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
         ))}
-      </div>
-    </div>
+      </ProjectsList>
+    </ProjectsSection>
   );
 }

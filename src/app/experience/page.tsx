@@ -1,5 +1,24 @@
+"use client";
+
 import ExperienceCard from "../../components/experience/ExperienceCard";
-import "../../components/experience/ExperienceCard.css";
+import styled from "styled-components";
+
+const Section = styled.div`
+  padding: 40px 0;
+`;
+
+const Heading = styled.h1`
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--color-text);
+  margin-bottom: 3rem;
+`;
+
+const ExperienceContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+`;
 
 export default function ExperiencePage() {
   const experiences = [
@@ -58,14 +77,14 @@ export default function ExperiencePage() {
   ];
 
   return (
-    <div className="section">
-      <h1 className="heading-xl text-center mb-12">Professional Experience</h1>
+    <Section>
+      <Heading>Professional Experience</Heading>
 
-      <div className="space-y-12">
+      <ExperienceContainer>
         {experiences.map((experience, index) => (
           <ExperienceCard key={index} experience={experience} />
         ))}
-      </div>
-    </div>
+      </ExperienceContainer>
+    </Section>
   );
 }

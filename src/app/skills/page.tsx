@@ -1,4 +1,32 @@
+"use client";
 import SkillCard from "@/components/skills/SkillCard";
+import styled from "styled-components";
+// import "../styles.css";
+
+const Section = styled.div`
+  padding: 40px 0;
+`;
+
+const Heading = styled.h1`
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--color-text);
+  margin-bottom: 3rem;
+`;
+
+const Description = styled.p`
+  font-size: 1.2rem;
+  color: var(--color-text);
+  margin-bottom: 3rem;
+  text-align: center;
+`;
+
+const SkillContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 3rem;
+`;
 
 export default function SkillsPage() {
   const skillCategories = [
@@ -133,20 +161,20 @@ export default function SkillsPage() {
   ];
 
   return (
-    <div className="section">
-      <h1 className="heading-xl text-center mb-12">Skills & Technologies</h1>
+    <Section>
+      <Heading>Skills & Technologies</Heading>
 
-      <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto text-center mb-16">
+      <Description>
         I&apos;ve developed a diverse skill set throughout my career, focusing
         on modern web technologies, cloud platforms, and effective development
         practices.
-      </p>
+      </Description>
 
-      <div className="space-y-16">
+      <SkillContainer>
         {skillCategories.map((category, index) => (
           <SkillCard key={index} category={category} />
         ))}
-      </div>
-    </div>
+      </SkillContainer>
+    </Section>
   );
 }
