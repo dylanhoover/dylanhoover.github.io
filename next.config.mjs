@@ -10,8 +10,8 @@ const nextConfig = {
     compiler: {
         styledComponents: true,
     },
-    assetPrefix: isProduction ? "/dylanhoover.github.io/" : undefined,
-    basePath: isProduction ? "/dylanhoover.github.io" : undefined,
+    // assetPrefix: isProduction ? "/dylanhoover.github.io/" : undefined,
+    // basePath: isProduction ? "/dylanhoover.github.io" : undefined,
 };
 
 export default nextConfig;
