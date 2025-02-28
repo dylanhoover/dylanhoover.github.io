@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import styled from "styled-components";
-
+import Bio from "@/components/about/Bio";
+import Education from "@/components/about/Education";
 const AboutSection = styled.div`
   padding: 40px 20px;
   max-width: 1200px;
@@ -16,84 +16,51 @@ const AboutHeading = styled.h1`
   margin-bottom: 20px;
 `;
 
-const AboutContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  max-width: 800px;
-  margin: 0 auto;
-
-  @media (min-width: 768px) {
-    flex-direction: row;
-  }
+const EducationSection = styled.div`
+  margin: 20px 0;
+  padding: 10px;
+  background-color: var(
+    --color-background
+  ); // Adjust background color as needed
+  border-radius: 5px;
 `;
 
-const ProfilePhoto = styled.div`
-  background-color: var(--color-background);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 300px;
-  flex: 1;
-`;
-
-const PhotoPlaceholder = styled.div`
-  color: var(--color-primary);
-  font-size: 1.5rem;
-`;
-
-const AboutDetails = styled.div`
+const EducationHeading = styled.h2`
+  text-align: center;
+  font-size: 2rem;
   color: var(--color-text);
-  line-height: 1.6;
-  flex: 2;
-
-  p {
-    margin-bottom: 15px;
-  }
+  margin-bottom: 20px;
 `;
+
+const education = [
+  {
+    degree: "Master of Science in Computer Engineering",
+    institution: "Santa Clara University",
+    year: "2022 - 2023",
+  },
+  {
+    degree: "Bachelor of Science in Computer Engineering",
+    institution: "Santa Clara University",
+    year: "2018 - 2022",
+  },
+];
 
 export default function AboutPage() {
   return (
     <AboutSection>
       <AboutHeading>About Me</AboutHeading>
-
-      <AboutContent>
-        <ProfilePhoto>
-          <PhotoPlaceholder>Profile Photo</PhotoPlaceholder>
-          {/* Once you have your photo, uncomment this:
-          <Image
-            src="/images/profile-about.jpg"
-            alt="Dylan Hoover"
-            width={400}
-            height={500}
-            style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+      <Bio />
+      <EducationSection>
+        <EducationHeading>Education</EducationHeading>
+        {education.map((education) => (
+          <Education
+            key={education.degree}
+            degree={education.degree}
+            institution={education.institution}
+            year={education.year}
           />
-          */}
-        </ProfilePhoto>
-
-        <AboutDetails>
-          <p>
-            I am a passionate software engineer with a focus on building
-            scalable and efficient applications. With a strong background in
-            both frontend and backend development, I enjoy tackling complex
-            problems and delivering innovative solutions.
-          </p>
-
-          <p>
-            My journey in software development started with a curiosity for
-            technology and a desire to create impactful software. Over the
-            years, I have honed my skills in various programming languages and
-            frameworks, always striving to stay updated with the latest industry
-            trends.
-          </p>
-
-          <p>
-            I thrive in collaborative environments, valuing clear communication
-            and teamwork to achieve common goals. Let&apos;s connect and explore
-            how we can work together to bring your ideas to life.
-          </p>
-        </AboutDetails>
-      </AboutContent>
+        ))}
+      </EducationSection>
     </AboutSection>
   );
 }

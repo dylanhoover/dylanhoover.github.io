@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import styled from "styled-components";
+import { sendEmail } from "@/utils/sendEmail";
 
 const FormContainer = styled.div`
   max-width: 600px;
@@ -82,7 +83,7 @@ const SubmitButton = styled.button`
 const SuccessMessage = styled.div`
   padding: 15px;
   background-color: var(--color-success-bg);
-  color: var(--color-success-text);
+  color: var(--color-success);
   border-radius: 4px;
   margin-bottom: 20px;
 `;
@@ -90,7 +91,7 @@ const SuccessMessage = styled.div`
 const ErrorMessage = styled.div`
   padding: 15px;
   background-color: var(--color-error-bg);
-  color: var(--color-error-text);
+  color: var(--color-error);
   border-radius: 4px;
   margin-bottom: 20px;
 `;
@@ -119,7 +120,8 @@ export default function ContactForm() {
 
     try {
       // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await sendEmail(formData);
+      //TODO: create real api call
 
       // Reset form
       setFormData({

@@ -47,7 +47,9 @@ interface NavLinkProps {
   active: boolean;
 }
 
-const NavLink = styled(Link)<NavLinkProps>`
+const NavLink = styled(Link).withConfig({
+  shouldForwardProp: (prop) => prop !== "active",
+})<NavLinkProps>`
   color: ${(props) => (props.active ? "#007bff" : "#fff")};
   text-decoration: none;
   font-weight: ${(props) => (props.active ? "bold" : "normal")};
