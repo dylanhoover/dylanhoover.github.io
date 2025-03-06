@@ -13,6 +13,7 @@ const BioContent = styled.div`
   display: flex;
   flex-direction: row;
   gap: 20px;
+  align-items: center;
 `;
 
 const BioImage = styled.img`
@@ -20,8 +21,9 @@ const BioImage = styled.img`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 300px;
+  height: 400px;
   flex: 1;
+  border-radius: 50%;
 `;
 
 const BioText = styled.div`

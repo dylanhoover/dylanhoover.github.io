@@ -115,8 +115,8 @@ export default function FeaturedProjects() {
     <ProjectsContainer>
       {projects.map((project) => (
         <ProjectCard key={project.id}>
-          <ProjectImageContainer>
-            {/* Uncomment when you have images
+          {/* <ProjectImageContainer> */}
+          {/* Uncomment when you have images
             <Image
               src={project.image}
               alt={project.title}
@@ -124,8 +124,8 @@ export default function FeaturedProjects() {
               style={{ objectFit: "cover" }}
             />
             */}
-            <ProjectImagePlaceholder>Project Image</ProjectImagePlaceholder>
-          </ProjectImageContainer>
+          {/* <ProjectImagePlaceholder>Project Image</ProjectImagePlaceholder>
+          </ProjectImageContainer> */}
           <ProjectContent>
             <ProjectTitle>{project.title}</ProjectTitle>
             <ProjectDescription>{project.description}</ProjectDescription>
