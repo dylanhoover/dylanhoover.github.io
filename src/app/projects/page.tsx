@@ -26,6 +26,38 @@ const ProjectsList = styled.div`
   color: var(--color-text);
 `;
 
+// Example project data
+const testProject = {
+  title: "Test Project",
+  description: "A test project description",
+  details: "Detailed information about the test project",
+  githubLink: "https://github.com/test/project",
+  technologyGroups: [
+    {
+      technologies: [
+        {
+          name: "React",
+          type: "Frontend"
+        },
+        {
+          name: "MongoDB",
+          type: "Database"
+        }
+      ]
+    }
+  ]
+};
+
+// Using fetch to test
+// fetch('/api/projects', {
+//   method: 'POST',
+//   headers: {
+//     'Content-Type': 'application/json',
+//   },
+//   body: JSON.stringify(testProject)
+// });
+
+
 export default function ProjectsPage() {
   const projects = [
     {
@@ -93,6 +125,28 @@ export default function ProjectsPage() {
       githubLink: "https://github.com/",
     },
   ];
+
+  const handleAddProject = async () => {
+    try {
+      const response = await fetch('/api/projects', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(testProject)
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to add project');
+      }
+      
+      const data = await response.json();
+      console.log('Project added:', data);
+    } catch (error) {
+      console.error('Error adding project:', error);
+    }
+  };
+
 
   return (
     <ProjectsSection>
