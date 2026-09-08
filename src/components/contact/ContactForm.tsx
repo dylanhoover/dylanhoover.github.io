@@ -2,76 +2,101 @@
 
 import { useState } from "react";
 import styled from "styled-components";
-import { sendEmail } from "@/utils/sendEmail";
+
+// TODO: replace with your real Formspree form ID from https://formspree.io/forms
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
 
 const FormContainer = styled.div`
-  max-width: 600px;
+  max-width: 520px;
   margin: 0 auto;
-  padding: 20px;
-  background-color: var(--color-background);
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: var(--space-2xl);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border);
 `;
 
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--space-lg);
 `;
 
 const FormGroup = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--space-sm);
 `;
 
 const Label = styled.label`
-  font-weight: bold;
+  font-weight: 600;
+  font-size: var(--text-sm);
   color: var(--color-text);
 `;
 
 const Input = styled.input`
-  padding: 10px;
+  padding: var(--space-md) var(--space-lg);
   border: 1px solid var(--color-border);
-  border-radius: 4px;
-  font-size: 16px;
-  background-color: var(--color-background);
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  font-family: var(--font-sans);
+  background-color: var(--color-surface);
   color: var(--color-text);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 
   &:focus {
     outline: none;
     border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-muted);
+  }
+
+  &::placeholder {
+    color: var(--color-text-subtle);
   }
 `;
 
 const TextArea = styled.textarea`
-  padding: 10px;
+  padding: var(--space-md) var(--space-lg);
   border: 1px solid var(--color-border);
-  border-radius: 4px;
-  font-size: 16px;
-  min-height: 150px;
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  font-family: var(--font-sans);
+  min-height: 160px;
   resize: vertical;
-  background-color: var(--color-background);
+  background-color: var(--color-surface);
   color: var(--color-text);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 
   &:focus {
     outline: none;
     border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-muted);
+  }
+
+  &::placeholder {
+    color: var(--color-text-subtle);
   }
 `;
 
 const SubmitButton = styled.button`
-  padding: 12px 20px;
+  padding: var(--space-md) var(--space-xl);
   background-color: var(--color-primary);
-  color: var(--color-text);
+  color: white;
   border: none;
-  border-radius: 4px;
-  font-size: 16px;
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  font-weight: 600;
+  font-family: var(--font-sans);
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.2s ease;
 
-  &:hover {
-    background-color: var(--color-primary-dark);
+  &:hover:not(:disabled) {
+    background-color: var(--color-primary-hover);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--color-primary-muted);
   }
 
   &:disabled {
@@ -81,19 +106,23 @@ const SubmitButton = styled.button`
 `;
 
 const SuccessMessage = styled.div`
-  padding: 15px;
+  padding: var(--space-lg);
   background-color: var(--color-success-bg);
   color: var(--color-success);
-  border-radius: 4px;
-  margin-bottom: 20px;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-lg);
+  font-size: var(--text-sm);
+  font-weight: 500;
 `;
 
 const ErrorMessage = styled.div`
-  padding: 15px;
+  padding: var(--space-lg);
   background-color: var(--color-error-bg);
   color: var(--color-error);
-  border-radius: 4px;
-  margin-bottom: 20px;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-lg);
+  font-size: var(--text-sm);
+  font-weight: 500;
 `;
 
 export default function ContactForm() {
@@ -119,18 +148,25 @@ export default function ContactForm() {
     setStatus("submitting");
 
     try {
-      // Simulate API call
-      await sendEmail(formData);
-      //TODO: create real api call
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-      // Reset form
+      if (!response.ok) {
+        throw new Error("Formspree request failed");
+      }
+
       setFormData({
         name: "",
         email: "",
         subject: "",
         message: "",
       });
-
       setStatus("success");
     } catch (error) {
       setStatus("error");

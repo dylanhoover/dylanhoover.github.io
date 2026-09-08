@@ -1,83 +1,110 @@
-import styled from "styled-components";
+"use client";
 
-const Card = styled.section`
-  background-color: var(--color-card-background);
+import styled from "styled-components";
+import type { Project } from "@/lib/data";
+
+const Card = styled.article<{ $span?: number }>`
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  background-color: var(--color-surface);
   color: var(--color-text);
   border: 1px solid var(--color-border);
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s;
+  border-radius: var(--radius-card);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  grid-column: span ${({ $span }) => $span ?? 1};
 
   &:hover {
-    transform: scale(1.02);
+    box-shadow: var(--shadow-card-hover);
+    border-color: var(--color-border-strong);
+  }
+
+  @media (max-width: 768px) {
+    grid-column: span 1;
   }
 `;
 
-const ProjectImage = styled.div`
-  flex: 1;
-  background-color: var(--color-background);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
+const ProjectTitle = styled.h3`
+  font-size: var(--text-xl);
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-text);
 `;
 
-const ProjectDetails = styled.div`
-  flex: 2;
-  padding: 20px;
+const ProjectDescription = styled.p`
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  flex: 1;
+`;
+
+const ProjectDetailsParagraph = styled.p`
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.5;
 `;
 
 const Technologies = styled.div`
-  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
 `;
 
 const TechBadge = styled.span`
-  background-color: #007bff;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-  margin-right: 5px;
+  background-color: var(--color-primary-muted);
+  color: var(--color-primary);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 500;
 `;
 
-const Button = styled.a`
-  background-color: var(--color-primary);
-  color: white;
-  padding: 10px 15px;
-  border-radius: 5px;
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 10px;
-  transition: background-color 0.3s;
+const GithubLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-top: auto;
+  font-weight: 600;
+  font-size: var(--text-sm);
+  color: var(--color-primary);
 
   &:hover {
-    background-color: var(--color-secondary);
+    color: var(--color-primary-hover);
   }
 `;
 
-const ProjectCard = ({ project }: { project: any }) => {
+interface ProjectCardProps {
+  project: Project;
+  span?: number;
+}
+
+const ProjectCard = ({ project, span }: ProjectCardProps) => {
   return (
-    <Card id={project.id}>
-      <ProjectImage>
-        <div className="image-placeholder">{project.title} Image</div>
-      </ProjectImage>
-      <ProjectDetails>
-        <h2>{project.title}</h2>
-        <p>{project.description}</p>
-        <p>{project.details}</p>
-        <Technologies>
-          {project.technologies.map((tech: string) => (
-            <TechBadge key={tech}>{tech}</TechBadge>
-          ))}
-        </Technologies>
-        <Button
+    <Card id={project.id} $span={span}>
+      <ProjectTitle>{project.title}</ProjectTitle>
+      <ProjectDescription>{project.description}</ProjectDescription>
+      {project.details && (
+        <ProjectDetailsParagraph>{project.details}</ProjectDetailsParagraph>
+      )}
+      <Technologies>
+        {project.technologies.map((tech: string) => (
+          <TechBadge key={tech}>{tech}</TechBadge>
+        ))}
+      </Technologies>
+      {project.githubLink && (
+        <GithubLink
           href={project.githubLink}
           target="_blank"
           rel="noopener noreferrer"
         >
-          View on GitHub
-        </Button>
-      </ProjectDetails>
+          View on GitHub →
+        </GithubLink>
+      )}
     </Card>
   );
 };
