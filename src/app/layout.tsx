@@ -1,6 +1,7 @@
 import { Instrument_Sans, Inter } from "next/font/google";
 import StyledComponentsRegistry from "../lib/registry";
 import { Metadata } from "next";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import Nav from "../components/layout/Nav";
 import Footer from "../components/layout/Footer";
 import "../styles/globals.css";
@@ -31,6 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${instrumentSans.variable}`}>
       <body className={inter.className}>
+        <SpeedInsights />
         <StyledComponentsRegistry>
           <Nav />
           <div className="container">{children}</div>
